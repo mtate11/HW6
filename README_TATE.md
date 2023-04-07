@@ -24,18 +24,6 @@ To compile this code, run the following command:
         example: run_program(<cpu_ptr>);
 - **NOTES**:
 
-/* write_instruction() takes an 8-bit opcode, an 8-bit arg1, arg2, and arg3, 
-and an int line_num and a pointer to an iCPU. It concatenates the first four
-arguments into a single uint32_t, and places the concatenated instruction 
-at prog[line num]. */
-void write_instruction(uint8_t, uint8_t, uint8_t, uint8_t, int, iCPU*);
-
-/* run_program() sets the program counter to 0, and then executes
-clock cycles continuously until pc reaches the end of the program memory, 
-after which it prints "program finished". */
-void run_program(iCPU*);
-
-
 ### 3. iCPU_step(): Control Unit Instructions
 - **WHERE**: code for the extended version of iCPU_step(), (it includes jump, beq, bne, and terminate) in hw6.h and hw6.c
 - **HOW**: either directly call iCPU_step() as indicated above, or use write_instruction() (with the specifications indicated above).
